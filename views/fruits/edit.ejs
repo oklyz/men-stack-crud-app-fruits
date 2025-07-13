@@ -1,0 +1,15 @@
+<%- include('../partials/_nav') %>
+<h1>Edit <%= fruit.name %></h1>
+<form action="/fruits/<%= fruit._id %>?_method=PUT" method="POST">
+  <label for="name">Name</label>
+  <input type="text" name="name" id="name" value="<%= fruit.name %>">
+  <br>
+  <label for="isReadyToEat">Ready To Eat?</label>
+  <input type="checkbox" name="isReadyToEat" id="isReadyToEat"
+  <% if(fruit.isReadyToEat) { %>
+    checked
+  <% } %>
+  >
+  <br>
+  <button type="submit">Update Fruit</button>
+</form>
